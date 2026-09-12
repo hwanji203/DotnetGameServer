@@ -1,0 +1,55 @@
+.loading-root {
+    flex-grow: 1;
+    background-color: var(--col-bg);
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    -unity-font-definition: url("project://database/Assets/_FontAssets/Moneygraphy-Pixel.ttf?fileID=12800000&guid=4716975891402404ca00bfef10e11c59&type=3#Moneygraphy-Pixel");
+}
+
+.loading__center {
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.center__game-title {
+    font-size: 110px;
+    color: var(--col-accent);
+    -unity-text-outline-width: 3px;
+    -unity-text-outline-color: rgb(212, 212, 212);
+    letter-spacing: 8px;
+}
+
+.center__game-subtitle {
+    font-size: 26px;
+    color: var(--col-text-dim);
+    margin-top: 18px;
+    margin-right: 18px;
+    margin-bottom: 18px;
+    margin-left: 18px;
+    letter-spacing: 4px;
+}
+
+.loading__bottom {
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.bottom__status {
+}
+
+.progress-track {
+}
+
+.progress-fill {
+}
+
+.version-label {
+}
