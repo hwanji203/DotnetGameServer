@@ -21,4 +21,7 @@ public class User
     //계정의 공용 재화
     public long Gold { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow; //태평양 표준시로 현재시간을 기록
+
+    //1:n이면 배열인ㄷ, 일단 1:1로 만들자
+    public Character? Character { get; set; }
 }
