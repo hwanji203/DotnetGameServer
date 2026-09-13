@@ -108,3 +108,9 @@ x86/
 
 # Publish Web Output
 *.[Pp]ublish.xml
+
+### Fixes for this repo's layout
+# GameServer.csproj is hand-written, not Unity-generated
+!/GameServer/*.csproj
+# Unity's Packages/ is the package manifest, not NuGet packages
+!/Dotnet_GameClient/Packages/*.json
