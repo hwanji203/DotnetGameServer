@@ -28,6 +28,8 @@ namespace Networking.Dtos
         public string Username { get; set; }
         public string Nickname { get; set; }
         public long Gold { get; set; }
+        public int Level { get; set; }
+        public long Exp { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }
