@@ -1,6 +1,10 @@
 @host = http://localhost:5207
 @id = gondr
 @pw = 123456
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMCIsInVuaXF1ZV9uYW1lIjoiZ29uZHIiLCJuaWNrbmFtZSI6IuyngO2DnO2ZmCIsImp0aSI6IjEzMjMwYjA1LThmMjYtNDhmZS1iNTc0LTgyYmQ3MDRhZWE5ZSIsImV4cCI6MTc4OTgxMzE0MSwiaXNzIjoiQ2FzdWFsR2FtZVNlcnZlciIsImF1ZCI6IkNhc3VhbEdhbWVDbGllbnQifQ.7Sjvg20KXnJRoa7Hw7eEbtvNccG8d2-uFAQxhyjqqnw
+@runId = 1
+@monsterId = 1
+@count = 1
 
 ###############
 ## 유저 테스트들
@@ -13,4 +17,36 @@ Content-Type: application/json
   "username": "{{id}}",
   "nickname": "지태환",
   "password": "{{pw}}"
+}
+
+### 로그인 테스트
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "{{id}}",
+  "password": "{{pw}}"
+}
+
+### 던전 런 생성 테스트
+POST {{host}}/api/dungeon/1/enter
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### 던전 종료 테스트
+POST {{host}}/api/dungeon/1/complete
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "kills":[
+    {
+      "monsterId": 1,
+      "count": 5
+    },
+    {
+      "monsterId":3,
+      "count": 1
+    }
+  ]
 }

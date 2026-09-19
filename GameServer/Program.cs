@@ -41,6 +41,9 @@ builder.Services.AddSingleton<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<TokenService>();
 builder.Services.AddScoped<CharacterService>();
+builder.Services.AddScoped<DungeonService>();
+
+builder.Services.AddSingleton(GameCatalog.LoadFrom(builder.Environment.ContentRootPath));
 
 //들어온 요청에서 JWT 토큰을 분해해서 알맞은 값으로 셋업해주는 서비를 만든다.
 string jwtKey = builder.Configuration["Jwt:key"] 
@@ -102,6 +105,5 @@ app.UseAuthorization();
 
 app.MapGet("/", () => "Server is running!");
 app.MapControllers(); //라우팅에 엔드포인트를 추가해주는 작업을 한다.
-app.MapHub<ChatHub>("/hub/chat");
-
+app.MapHub<ChatHub>("/hubs/chat");
 app.Run();

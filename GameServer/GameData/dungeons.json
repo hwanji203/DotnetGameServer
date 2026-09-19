@@ -1,0 +1,32 @@
+[
+  {
+    "id":1,
+    "name": "슬라임 굴",
+    "clearGoldBonus": 150,
+    "spawns":[
+      {
+        "monsterId": 1,
+        "count":10
+      },
+      {
+        "monsterId":3,
+        "count":1
+      }
+    ]
+  },
+  {
+    "id":2,
+    "name": "스켈레톤 근거지",
+    "clearGoldBonus": 250,
+    "spawns":[
+      {
+        "monsterId": 1,
+        "count":10
+      },
+      {
+        "monsterId":3,
+        "count":1
+      }
+    ]
+  }
+]

@@ -13,6 +13,7 @@ public class AppDbContext : DbContext
     //엔티티로 만들어진 테이블을 선언한다. Linq 쿼리가 이걸로 시작한다.
     public DbSet<User> Users => Set<User>();
     public DbSet<Character> Characters => Set<Character>();
+    public DbSet<DungeonRun> DungeonRuns => Set<DungeonRun>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -26,5 +27,8 @@ public class AppDbContext : DbContext
             .HasOne(u => u.Character)
             .WithOne(c => c.User)
             .HasForeignKey<Character>(c => c.UserId); //이게 외래키다.
+
+        modelBuilder.Entity<DungeonRun>()
+            .HasIndex(run => new { run.UserId, run.Status }); //UserId, Status 인덱스 넣으면
     }
 }

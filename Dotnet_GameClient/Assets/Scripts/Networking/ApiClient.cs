@@ -17,12 +17,26 @@ namespace Networking
         [SerializeField] private string serverUrl = "http://localhost:5207";
         [SerializeField] private int timeoutSeconds = 10; //10초간 연결안되면 서버 꺼진거.
 
-        private const string TokenPrefKey = "token";
+        private readonly string TokenPrefKey = "token" + PlayerSuffix();
 
         public string Token { get; private set; }
         public bool HasToken => !string.IsNullOrEmpty(Token);
         
         public string ServerUrl => serverUrl;
+
+        //유니티 테스트용으로 토큰 뒤에 Player이름을 붙여서 해당 이름으로 토큰을 저장하고 로드하게 하는거
+        private static string PlayerSuffix()
+        {
+            string[] args = Environment.GetCommandLineArgs();
+            for (int i = 0; i < args.Length - 1; i++)
+                if (args[i] == "-name")
+                {
+                    Debug.Log("_" + args[i + 1]);
+                    return "_" + args[i + 1];
+                }
+            
+            return string.Empty;
+        }   
         
         //서버쪽 메시지들이 CamelCase로 되어 있어서 그걸 기반으로 Resolving을 해야한다.
         //널 값의 프로퍼티는 무시해라(파싱하지 마라)
