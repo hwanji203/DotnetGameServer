@@ -42,6 +42,7 @@ builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<TokenService>();
 builder.Services.AddScoped<CharacterService>();
 builder.Services.AddScoped<DungeonService>();
+builder.Services.AddScoped<GuildService>();
 
 builder.Services.AddSingleton(GameCatalog.LoadFrom(builder.Environment.ContentRootPath));
 

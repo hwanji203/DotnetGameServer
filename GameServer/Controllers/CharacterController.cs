@@ -39,18 +39,4 @@ public class CharacterController : ControllerBase
         
         return Ok(character);
     }
-
-    [HttpPost("me/gain-exp")]
-    public async Task<IActionResult> GainExp([FromBody] GainExpRequest request)
-    {
-        if (GetUserId() is not int userId)
-            return Unauthorized();
-        
-        CharacterResponse? character = await _characterService.AddExpAsync(userId, request.Amount);
-
-        if (character is null)
-            return NotFound(new { message = "캐릭터를 찾을 수 없습니다." });
-        
-        return Ok(character);
-    }
 }

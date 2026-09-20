@@ -54,6 +54,5 @@ public class GameCatalog
         string json = File.ReadAllText(filePath);
         return JsonSerializer.Deserialize<List<T>>(json, JsonOptions)
             ?? throw new InvalidOperationException($"마스터 데이터 파일 파싱 실패 : {filePath}");
-        //데이터 무결성 검사가 이뤄져야 한다.
     }
 }

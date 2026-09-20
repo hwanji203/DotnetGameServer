@@ -1,10 +1,30 @@
 @host = http://localhost:5207
 @id = gondr
+@id2 = dummy2134
 @pw = 123456
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMCIsInVuaXF1ZV9uYW1lIjoiZ29uZHIiLCJuaWNrbmFtZSI6IuyngO2DnO2ZmCIsImp0aSI6IjEzMjMwYjA1LThmMjYtNDhmZS1iNTc0LTgyYmQ3MDRhZWE5ZSIsImV4cCI6MTc4OTgxMzE0MSwiaXNzIjoiQ2FzdWFsR2FtZVNlcnZlciIsImF1ZCI6IkNhc3VhbEdhbWVDbGllbnQifQ.7Sjvg20KXnJRoa7Hw7eEbtvNccG8d2-uFAQxhyjqqnw
-@runId = 1
-@monsterId = 1
-@count = 1
+@pw2 = 12345678
+@token1 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMCIsInVuaXF1ZV9uYW1lIjoiZ29uZHIiLCJuaWNrbmFtZSI6IuyngO2DnO2ZmCIsImp0aSI6IjBlNzU3MjI2LWI4YWEtNDM5OS04N2M4LWM5MTlkYmFmOWY4NSIsImV4cCI6MTc4OTg5NjI1NywiaXNzIjoiQ2FzdWFsR2FtZVNlcnZlciIsImF1ZCI6IkNhc3VhbEdhbWVDbGllbnQifQ.T7LvuseJyLMXekhRclRxLvfRo4sBaMVFK_0WQ0ktjsQ
+@token2 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMSIsInVuaXF1ZV9uYW1lIjoiZHVtbXkyMTM0Iiwibmlja25hbWUiOiIxMjMxNCIsImp0aSI6IjViZTJkYjJhLTk2NTQtNDI3Ny1iOWRjLThhZDkzNGMwOGY1MSIsImV4cCI6MTc4OTg5NjM4MCwiaXNzIjoiQ2FzdWFsR2FtZVNlcnZlciIsImF1ZCI6IkNhc3VhbEdhbWVDbGllbnQifQ.yuHUOCx0dvtGd2xIvvLrRIWAN_86MNGjuttt9RZwbFc
+
+### 길드 테스트(생성)
+
+POST {{host}}/api/guild
+Authorization: Bearer {{token2}}
+Content-Type: application/json
+
+{"name" : "GGM길드2", "joinMode": 0}
+
+### 길드 테스트(가입)
+
+POST {{host}}/api/guild/1/join
+Authorization: Bearer {{token2}}
+Content-Type: application/json
+
+### 길드 테스트(나가기)
+
+POST {{host}}/api/guild/leave
+Authorization: Bearer {{token2}}
+Content-Type: application/json
 
 ###############
 ## 유저 테스트들
@@ -24,19 +44,19 @@ POST {{host}}/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "{{id}}",
-  "password": "{{pw}}"
+  "username": "{{id2}}",
+  "password": "{{pw2}}"
 }
 
 ### 던전 런 생성 테스트
 POST {{host}}/api/dungeon/1/enter
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{token1}}
 
 ### 던전 종료 테스트
 POST {{host}}/api/dungeon/1/complete
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{token1}}
 
 {
   "kills":[

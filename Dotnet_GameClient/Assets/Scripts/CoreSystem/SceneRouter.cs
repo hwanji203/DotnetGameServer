@@ -8,6 +8,7 @@ namespace CoreSystem
         public const string LoginScene = "LoginScene";
         public const string MainScene = "MainScene";
         public const string TownScene = "TownScene";
+        public const string DungeonScene = "DungeonScene";
         
         public static void Go(string sceneName) => SceneManager.LoadScene(sceneName);
     }

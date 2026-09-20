@@ -6,9 +6,4 @@
         public long Exp { get; set; }
         public long ExpToNextLevel { get; set; }
     }
-    
-    public class GainExpResponse
-    {
-        public int Amount { get; set; }
-    }
 }

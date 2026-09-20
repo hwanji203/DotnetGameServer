@@ -1,0 +1,50 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Game%20Assets/UI%20Assets/GameHudStyle.uss?fileID=7433441132597879392&amp;guid=1954ab335a2419446a4f0b9fd01d4075&amp;type=3#GameHudStyle"/>
+    <ui:VisualElement name="hud-root" class="hud-root" picking-mode="Ignore">
+        <ui:VisualElement name="hud" class="hud">
+            <ui:VisualElement class="hud-head">
+                <ui:Label text="Lv. 1" name="hud-level" class="hud-level"/>
+                <ui:Label text="" name="hud-nickname" class="hud-nickname"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="bar-row">
+                <ui:Label text="HP" class="bar-tag"/>
+                <ui:VisualElement class="bar-track">
+                    <ui:VisualElement name="hp-fill" class="bar-fill bar-fill--hp"/>
+                    <ui:Label text="100 / 100" name="hp-text" class="bar-text"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="bar-row">
+                <ui:Label text="EXP" class="bar-tag"/>
+                <ui:VisualElement class="bar-track">
+                    <ui:VisualElement name="exp-fill" class="bar-fill bar-fill--exp"/>
+                    <ui:Label text="0 / 0" name="exp-text" class="bar-text"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="skill-bar" class="skill-bar">
+            <ui:VisualElement class="skill-slot">
+                <ui:Label text="Q" class="skill-key"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="skill-slot">
+                <ui:Label text="E" class="skill-key"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="skill-slot">
+                <ui:Label text="R" class="skill-key"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="skill-slot">
+                <ui:Label text="F" class="skill-key"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="chat" class="chat">
+            <ui:VisualElement class="chat-tabs">
+                <ui:Button text="일반" name="chat-tab-normal" class="chat-tab chat-tab--active"/>
+                <ui:Button text="길드" name="chat-tab-guild" class="chat-tab"/>
+            </ui:VisualElement>
+            <ui:ScrollView name="chat-log" mode="Vertical" class="chat-log"/>
+            <ui:VisualElement class="chat-input-row">
+                <ui:TextField name="chat-input" class="chat-input"/>
+                <ui:Button text="전송" name="chat-send" class="btn btn--primary chat-send"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
